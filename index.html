@@ -208,70 +208,89 @@
                 </div>
                 <p>Developed a Python-based packet sniffer to capture and analyze network traffic, identifying potential security threats and anomalies. [Add more details about the project, e.g., tools used, outcomes]</p>
             </div>
+<div class="col-lg-4 col-md-6 portfolio-item filter-cybersecurity">
+  <h4 class="text-center">Blue Team Lab: Detecting RDP Brute Force</h4>
+  <div class="portfolio-wrap mb-3">
+    <!-- Main ELK dashboard -->
+    <a href="assets/img/projects/elk-full.png"
+       class="portfolio-lightbox"
+       data-glightbox="title: RDP Brute-Force Detection in ELK">
+      <img src="assets/img/projects/elk-thumb.png"
+           class="img-fluid"
+           alt="ELK Brute-Force Detection">
+      <i class="bx bx-zoom-in portfolio-icon"></i>
+    </a>
+  </div>
 
-    <div class="col-lg-4 col-md-6 portfolio-item filter-cybersecurity">
-        <h4 class="text-center">Blue Team Lab: Detecting RDP Brute Force</h4>
-        <div class="portfolio-wrap">
-          <!-- FIXED: point src to your ELK screenshot -->
-          <a href="assets/img/projects/elk-full.png" 
-             class="portfolio-lightbox" 
-             data-glightbox="title: RDP Brute-Force Detection in ELK">
-            <img src="assets/img/projects/elk-thumb.png" 
-                 class="img-fluid" 
-                 alt="ELK Brute-Force Detection">
-            <i class="bx bx-zoom-in portfolio-icon"></i>
-          </a>
-        </div>
-    <p><strong>Objective:</strong><br>
-        This lab simulated an RDP brute-force attack within a controlled internal network to demonstrate how Windows logs can be forwarded and analyzed using the ELK Stack (Elasticsearch, Logstash, Kibana). The goal was to detect the malicious activity through event code logging and analysis in Kibana.
-    </p>
+  <p><strong>Objective:</strong><br>
+     This lab simulated an RDP brute-force attack within a controlled internal network to demonstrate how Windows logs can be forwarded and analyzed using the ELK Stack (Elasticsearch, Logstash, Kibana). The goal was to detect the malicious activity through event code logging and analysis in Kibana.
+  </p>
 
-    <p><strong>Lab Setup:</strong><br>
-        <ul>
-            <li>Kali Linux (Attacker) – 192.168.20.11</li>
-            <li>Windows 11 Pro (Target) – 192.168.20.10</li>
-            <li>Ubuntu ELK Stack (SIEM) – 192.168.20.12</li>
-        </ul>
-        All machines were connected to a virtual internal network. Winlogbeat was installed on the Windows machine to forward logs to Elasticsearch, where they were visualized in Kibana.
-    </p>
+  <p><strong>Lab Setup:</strong><br>
+    <ul>
+      <li>Kali Linux (Attacker) – 192.168.20.11</li>
+      <li>Windows 11 Pro (Target) – 192.168.20.10</li>
+      <li>Ubuntu ELK Stack (SIEM) – 192.168.20.12</li>
+    </ul>
+  </p>
 
-    <p><strong>Tools Used:</strong><br>
-        <ul>
-            <li>Hydra – to simulate the brute-force RDP attack from Kali</li>
-            <li>Winlogbeat – to ship Windows logs to ELK</li>
-            <li>Kibana – for log visualization and event correlation</li>
-            <li>Elasticsearch + Logstash – for log storage and parsing</li>
-        </ul>
-    </p>
+  <p><strong>Tools Used:</strong><br>
+    <ul>
+      <li>Hydra – to simulate the brute-force RDP attack from Kali</li>
+      <li>Winlogbeat – to ship Windows logs to ELK</li>
+      <li>Kibana – for log visualization and event correlation</li>
+      <li>Elasticsearch + Logstash – for log storage and parsing</li>
+    </ul>
+  </p>
 
-    <p><strong>Attack Simulation:</strong><br>
-        Using Kali, a brute-force RDP attack was launched against the Windows 11 machine:<br>
-        <code>hydra -t 4 -V -f -l Administrator -P /usr/share/wordlists/rockyou.txt rdp://192.168.20.10</code><br>
-        This simulated an attacker attempting multiple login combinations via RDP.
-    </p>
-    <img src="assets/img/projects/hydra-attack.png" class="img-thumbnail my-2" alt="Hydra Attack Simulation">
+  <p><strong>Attack Simulation:</strong><br>
+    Using Kali, a brute-force RDP attack was launched against the Windows 11 machine:<br>
+    <code>hydra -t 4 -V -f -l Administrator -P /usr/share/wordlists/rockyou.txt rdp://192.168.20.10</code>
+  </p>
+  <div class="mb-3">
+    <!-- Hydra attack screenshot -->
+    <a href="assets/img/projects/hydra-attack-full.png"
+       class="portfolio-lightbox"
+       data-glightbox="title: Hydra RDP Brute-Force Simulation">
+      <img src="assets/img/projects/hydra-attack.png"
+           class="img-fluid"
+           alt="Hydra Attack Simulation">
+      <i class="bx bx-zoom-in portfolio-icon"></i>
+    </a>
+  </div>
 
-    <p><strong>Detection in ELK:</strong><br>
-        On the ELK stack (Kibana), Event ID 4625 (failed login attempt) was searched using the Discover tab:<br>
-        <code>event.code: 4625</code><br>
-        These logs confirmed the brute-force activity, showing multiple failed login attempts from the Kali IP.
-    </p>
-    <img src="assets/img/projects/elk-log.png" class="img-thumbnail my-2" alt="Kibana Log View">
+  <p><strong>Detection in ELK:</strong><br>
+    On the ELK stack (Kibana), Event ID 4625 (failed login attempt) was searched using the Discover tab:<br>
+    <code>event.code: 4625</code><br>
+    These logs confirmed the brute-force activity, showing multiple failed login attempts from the Kali IP.
+  </p>
+  <div class="mb-3">
+    <!-- ELK log view screenshot -->
+    <a href="assets/img/projects/elk-log-full.png"
+       class="portfolio-lightbox"
+       data-glightbox="title: Kibana Log View – Event ID 4625">
+      <img src="assets/img/projects/elk-log.png"
+           class="img-fluid"
+           alt="Kibana Log View">
+      <i class="bx bx-zoom-in portfolio-icon"></i>
+    </a>
+  </div>
 
-    <p><strong>Outcome:</strong><br>
-        The brute-force attack was successfully detected and logged using Winlogbeat and visualized in Kibana. This demonstrates a basic but critical use case for log correlation, alerting, and threat detection in a Blue Team environment.
-    </p>
+  <p><strong>Outcome:</strong><br>
+     The brute-force attack was successfully detected and logged using Winlogbeat and visualized in Kibana. This demonstrates a basic but critical use case for log correlation, alerting, and threat detection in a Blue Team environment.
+  </p>
 
-    <p><strong>Skills Demonstrated:</strong><br>
-        <ul>
-            <li>Event log forwarding (Winlogbeat → ELK)</li>
-            <li>ELK Stack deployment and configuration</li>
-            <li>Brute-force attack simulation (Hydra)</li>
-            <li>SIEM-based detection using Kibana</li>
-            <li>Windows event code analysis (Event ID 4625)</li>
-        </ul>
-    </p>
+  <p><strong>Skills Demonstrated:</strong><br>
+    <ul>
+      <li>Event log forwarding (Winlogbeat → ELK)</li>
+      <li>ELK Stack deployment and configuration</li>
+      <li>Brute-force attack simulation (Hydra)</li>
+      <li>SIEM-based detection using Kibana</li>
+      <li>Windows event code analysis (Event ID 4625)</li>
+    </ul>
+  </p>
 </div>
+
 
 
 
