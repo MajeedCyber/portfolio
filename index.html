@@ -210,19 +210,18 @@
             </div>
 
     <div class="col-lg-4 col-md-6 portfolio-item filter-cybersecurity">
-    <h4 style="text-align: center;">Blue Team Lab: Detecting RDP Brute Force with Winlogbeat + ELK</h4>
-   <div class="portfolio-wrap">
-  <a href="assets/img/projects/packet-sniffer.jpg" data-glightbox="portfolio" class="portfolio-lightbox">
-    <img src="assets/img/projects/packet-sniffer.jpg" class="img-thumbnail" alt="">
-  </a>
-  <div class="portfolio-info">
-    <div class="portfolio-links">
-      <a href="assets/img/projects/packet-sniffer.jpg" data-glightbox="portfolio" class="portfolio-lightbox">
-        <i class="bx bx-zoom-in"></i>
-      </a>
-    </div>
-  </div>
-</div>
+        <h4 class="text-center">Blue Team Lab: Detecting RDP Brute Force</h4>
+        <div class="portfolio-wrap">
+          <!-- FIXED: point src to your ELK screenshot -->
+          <a href="assets/img/projects/elk-full.png" 
+             class="portfolio-lightbox" 
+             data-glightbox="title: RDP Brute-Force Detection in ELK">
+            <img src="assets/img/projects/elk-thumb.png" 
+                 class="img-fluid" 
+                 alt="ELK Brute-Force Detection">
+            <i class="bx bx-zoom-in portfolio-icon"></i>
+          </a>
+        </div>
     <p><strong>Objective:</strong><br>
         This lab simulated an RDP brute-force attack within a controlled internal network to demonstrate how Windows logs can be forwarded and analyzed using the ELK Stack (Elasticsearch, Logstash, Kibana). The goal was to detect the malicious activity through event code logging and analysis in Kibana.
     </p>
