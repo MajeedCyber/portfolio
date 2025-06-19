@@ -79,23 +79,41 @@
 </header><!-- End Header -->
 
 <!-- ======= About Section ======= -->
+<!-- ======= About Section ======= -->
 <section id="about" class="about py-5">
-  <div class="container">
+  <div class="container text-center">
     <div class="section-title">
       <h2>About</h2>
     </div>
-    <div class="row align-items-center">
+    <!-- Profile Image Row -->
+    <div class="row justify-content-center">
       <div class="col-md-4">
-        <img src="assets/img/IMG_4807.PNG" alt="Profile Image" class="img-fluid rounded shadow">
+        <img src="assets/img/IMG_4807.PNG" 
+             alt="Profile Image" 
+             class="img-fluid rounded-circle shadow mx-auto d-block profile-pic">
       </div>
-      <div class="col-md-8 pt-4">
+    </div>
+    <!-- About Text Row -->
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-8">
         <p>
-          Interested in Cybersecurity, specifically SOC and Cloud Security/IAM. Strong foundation in network security, threat analysis, and incident response. Proficient in tools like Wireshark, ELK Stack, and Python for packet analysis and security monitoring. Certified in Google Cybersecurity (January 2025) and CompTIA Security+ (March 2025). Passionate about detecting and mitigating cyber threats, with hands-on experience in projects involving packet sniffing, attack simulation, and traffic mapping. 
+          Interested in Cybersecurity, specifically SOC and Cloud Security/IAM. Strong foundation in network security, threat analysis, and incident response. Proficient in tools like Wireshark, ELK Stack, and Python for packet analysis and security monitoring. Certified in Google Cybersecurity (January 2025) and CompTIA Security+ (March 2025). Passionate about detecting and mitigating cyber threats, with hands-on experience in projects involving packet sniffing, attack simulation, and traffic mapping.
         </p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Add this CSS to your stylesheet -->
+<style>
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>
+
 
 <!-- ======= Skills & Tools Section ======= -->
 <section id="skills" class="skills py-5">
